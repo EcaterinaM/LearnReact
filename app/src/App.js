@@ -2,7 +2,7 @@ import React from 'react';
 
 import './App.css';
 
-import ShoppingCard from './components/ShoppingCardComponent/ShoppingCard';
+import ShoppingCard from './components/ShoppingCard/ShoppingCard';
 import Title from './components/Title';
 
 class App extends React.Component{

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './ShoppingCard.css';
 
-class ClassComponent extends React.Component{
+class ShoppingCard extends React.Component{
 
    sum(...args){
      let result = 0;
@@ -20,10 +20,10 @@ class ClassComponent extends React.Component{
        <div className="shopping-card">
          <span>Name: {name}</span>  
          <span>Surname: {surname}</span>
-         <span>To pay: {totalPrice}</span>
+         <span>To pay: {totalPrice} LEI</span>
       </div>
     );
   }
 }
 
-export default ClassComponent;
+export default ShoppingCard;
