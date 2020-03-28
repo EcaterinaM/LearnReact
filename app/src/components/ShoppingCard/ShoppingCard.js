@@ -11,7 +11,6 @@ class ShoppingCard extends React.Component{
    }
 
   render(){
-
       let {name, surname, shoppingList} = this.props.users;
       let prices = shoppingList.map(sl => sl.price);
       let totalPrice = this.sum(...prices);
