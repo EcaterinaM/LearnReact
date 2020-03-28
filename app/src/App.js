@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ShoppingCard from './components/ShoppingCardComponent/ShoppingCard';
+import Title from './components/Title';
+
+class App extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      name: 'Ecaterina',
+      surname: 'M.',
+      shoppingList: [
+        {
+          itemName: 'Bread',
+          price: 5,
+        },
+        {
+          itemName: 'Water',
+          price: 3
+        },
+        {
+          itemName: 'Wine',
+          price: 40
+        }
+      ]
+    };
+  }
+
+  render(){
+
+    const users = this.state
+    return (
+      <div className="main-container">
+        <h1>My base App react component</h1>
+        <Title />
+        <ShoppingCard users={users} />
+      </div>        
+    );
+  }
 }
 
 export default App;
+
