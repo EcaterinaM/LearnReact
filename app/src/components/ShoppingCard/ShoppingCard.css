@@ -1,8 +1,0 @@
-.shopping-card{
-    width: 200px;
-    background-color: wheat;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    border-radius: 8px;
-}

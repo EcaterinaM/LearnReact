@@ -1,0 +1,42 @@
+h1{
+    margin: 0;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    color: #d3f6f3;
+    letter-spacing: 18px;
+    font-size: 28px;
+}
+
+.header{
+    box-shadow: 0 2px 6px #e0dede;
+}
+
+.header-items{
+ display: flex;
+ flex-direction: row; 
+ font-size: 20px;
+ letter-spacing: 2px; 
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li{
+    padding: 4px;
+    padding: 16px;
+    cursor: pointer;
+}
+
+li:hover{
+    background-color: #d3f6f3;
+}
+

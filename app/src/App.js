@@ -1,15 +1,14 @@
 import React from 'react';
 
-import './App.css';
+import Cocktails from './components/Cocktails/Cocktails';
 
-import ShoppingList from './components/ShoppingList';
+import './App.css';
 
 function App() {
   return (
     <div className="main-container">
-       <h1>My base App react component</h1>
-       <ShoppingList />
-    </div>  
+      <Cocktails/>
+    </div>
   );
 }
 
