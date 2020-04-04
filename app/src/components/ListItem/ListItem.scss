@@ -1,0 +1,36 @@
+.list-item{
+    height: auto;
+    margin-bottom: 12px;
+
+    .list-title{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 6px #e0dede;
+      margin-bottom: 20px;
+      background-color: rgba(211,246,243,0.5);
+      font-size: 24px;
+      letter-spacing: 2px;
+  }
+  
+  .cards {
+      max-width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-gap: 1rem;
+     
+    }
+}
+
+  img{
+    height: 300px;
+    cursor: pointer;
+  }
+
+  @media (min-width: 600px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 900px) {
+    .cards { grid-template-columns: repeat(4, 1fr); }
+  }

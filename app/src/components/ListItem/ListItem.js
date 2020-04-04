@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from '../Card/Card';
 
-import './ListItem.css';
+import './ListItem.scss';
 
 class ListItem extends React.Component{
 
@@ -11,20 +11,17 @@ class ListItem extends React.Component{
     }
 
   onImageClickCallback = (selectedDrinkName) => {
-    console.log('Image');
-    let index = this.props.items.findIndex(i => i.strDrink == selectedDrinkName);
+    let index = this.props.items.findIndex(i => i.strDrink === selectedDrinkName);
     this.props.onImageClick({type: this.props.title, index: index});
   }
 
   titleClickCallback = (selectedDrinkName) => {
-    let index = this.props.items.findIndex(i => i.strDrink == selectedDrinkName);
+    let index = this.props.items.findIndex(i => i.strDrink === selectedDrinkName);
     this.props.onTitleClick({type: this.props.title, index: index});
   }
 
   render(){
-    
     let items = this.props.items.map(i =>
-      
        <Card imagePath={i.strDrinkThumb} name={i.strDrink} key={i.strDrink}
              onImageClickCallback = {this.onImageClickCallback} 
              onTitleClickCallback = {this.titleClickCallback}/>);

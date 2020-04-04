@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './CardDetails.css';
+import './CardDetails.scss';
 
 class CardDetails extends React.Component{
 
@@ -19,9 +19,9 @@ class CardDetails extends React.Component{
                   Hide details
                </button>
               <div className="details-image-container">
-              <img  className="details-img"
-                    src={this.props.selectedCocktail.strDrinkThumb} 
-                    alt={this.props.selectedCocktail.strDrink}/>
+                <img  className="details-img"
+                      src={this.props.selectedCocktail.strDrinkThumb} 
+                      alt={this.props.selectedCocktail.strDrink}/>
               </div>
           </div>
           <div className="right-container">

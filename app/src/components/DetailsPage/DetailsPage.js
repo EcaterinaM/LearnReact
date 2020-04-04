@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from '../Card/Card';
 
-import './DetailsPage.css';
+import './DetailsPage.scss';
 
 class DetailsPage extends React.Component{
 
@@ -14,7 +14,7 @@ class DetailsPage extends React.Component{
     const onBack= () => { this.props.onBackDetailsPage(); }
     return (
       <div className="details-page-container" >
-           <button className="primary-button"
+           <button className="primary-button back-button"
                   onClick={() => onBack()}>Back</button>
                 <Card  imagePath={this.props.selectedCocktail.strDrinkThumb} 
                             name={this.props.selectedCocktail.strDrink} 

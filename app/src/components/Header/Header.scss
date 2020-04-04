@@ -28,15 +28,18 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    li{
+        padding: 4px;
+        padding: 16px;
+        cursor: pointer;
+    
+        &:hover{
+            background-color: #d3f6f3; 
+        }
+    }
 }
 
-li{
-    padding: 4px;
-    padding: 16px;
-    cursor: pointer;
-}
 
-li:hover{
-    background-color: #d3f6f3;
-}
+
 

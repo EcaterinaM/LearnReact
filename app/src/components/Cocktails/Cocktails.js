@@ -3,12 +3,12 @@ import React from 'react';
 import axios from 'axios';
 
 import CardDetails from '../CardDetails/CardDetails';
+import DetailsPage from '../DetailsPage/DetailsPage';
 import ListItem from '../ListItem/ListItem';
 import Header from '../Header/Header';
 import Search from '../Search/Search';
 
-import './Cocktails.css';
-import DetailsPage from '../DetailsPage/DetailsPage';
+import './Cocktails.scss';
 
 class Cocktails extends React.Component{
 
@@ -43,16 +43,14 @@ class Cocktails extends React.Component{
     }
 
     onImageClickCallbackFunction = (selectedCocktail) => {
-        let selectedCocktails = this.state.cocktails.find(c => c.name == selectedCocktail.type).list;
+        let selectedCocktails = this.state.cocktails.find(c => c.name === selectedCocktail.type).list;
         this.setState({selectedCocktail: selectedCocktails[selectedCocktail.index]})
         this.setState({isListVisible: false})
     }
 
     onTitleClickCallbackFunction = (selectedCocktail) =>{
-        console.log(selectedCocktail);
-        let selectedCocktails = this.state.cocktails.find(c => c.name == selectedCocktail.type).list;
+        let selectedCocktails = this.state.cocktails.find(c => c.name === selectedCocktail.type).list;
         this.setState({selectedCocktail: selectedCocktails[selectedCocktail.index]})
-        console.log()
         this.setState({isDetailsVisible: true})
     }
 
@@ -67,7 +65,7 @@ class Cocktails extends React.Component{
   render(){
                   
     let cocktailsList = this.state.cocktails.map(c => 
-        <div>
+        <div key={c.name}>
             <ListItem items={c.list} title={c.name} key={c.name}
                   onImageClick={this.onImageClickCallbackFunction}
                   onTitleClick={this.onTitleClickCallbackFunction} />
