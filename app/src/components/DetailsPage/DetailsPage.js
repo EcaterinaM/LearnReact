@@ -1,14 +1,12 @@
 import React from 'react';
 
 import Card from '../Card/Card';
+import TitleHoc from '../hocs/TitleHoc';
 
 import './DetailsPage.scss';
 
 class DetailsPage extends React.Component{
 
-  constructor(props){
-        super(props);
-  }
 
   render(){
     const onBack= () => { this.props.onBackDetailsPage(); }
@@ -22,6 +20,8 @@ class DetailsPage extends React.Component{
       </div>);
   }
 }
+
+DetailsPage = new TitleHoc(DetailsPage);
 
 export default DetailsPage;
 

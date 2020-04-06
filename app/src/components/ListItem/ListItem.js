@@ -6,9 +6,6 @@ import './ListItem.scss';
 
 class ListItem extends React.Component{
 
-  constructor(props){
-        super(props);
-    }
 
   onImageClickCallback = (selectedDrinkName) => {
     let index = this.props.items.findIndex(i => i.strDrink === selectedDrinkName);

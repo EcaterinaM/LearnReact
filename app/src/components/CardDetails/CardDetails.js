@@ -4,9 +4,6 @@ import './CardDetails.scss';
 
 class CardDetails extends React.Component{
 
-  constructor(props){
-        super(props);
-  }
 
   render(){
     const onHide = () => { this.props.onHideDetailsClick(); }

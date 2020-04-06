@@ -4,9 +4,9 @@ import './Card.scss';
 
 class Card extends React.Component{
 
-  constructor(props){
-        super(props);
-  }
+  // constructor(props){
+  //       super(props);
+  // }
 
   render(){
 

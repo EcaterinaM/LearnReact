@@ -2,15 +2,15 @@ import React from 'react';
 
 import axios from 'axios';
 
-import CardDetails from '../CardDetails/CardDetails';
-import DetailsPage from '../DetailsPage/DetailsPage';
-import ListItem from '../ListItem/ListItem';
-import Header from '../Header/Header';
-import Search from '../Search/Search';
+import CardDetails from '../../CardDetails/CardDetails';
+import DetailsPage from '../../DetailsPage/DetailsPage';
+import ListItem from '../../ListItem/ListItem';
+import Header from '../../Header/Header';
+import Search from '../../Search/Search';
 
-import './Cocktails.scss';
+import './HomePage.scss';
 
-class Cocktails extends React.Component{
+class HomePage extends React.Component{
 
     constructor(props){
         super(props);
@@ -94,6 +94,8 @@ class Cocktails extends React.Component{
                     </div>:null
                 }
 
+                {/* this will be refactored with the router */}
+
                 {!this.state.isListVisible ? 
                     <DetailsPage selectedCocktail={this.state.selectedCocktail}
                                 onBackDetailsPage={this.onBackDetailsPage}
@@ -107,5 +109,5 @@ class Cocktails extends React.Component{
   }
 }
 
-export default Cocktails;
+export default HomePage;
 
