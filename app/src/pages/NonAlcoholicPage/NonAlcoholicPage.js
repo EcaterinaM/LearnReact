@@ -1,11 +1,11 @@
 import React from 'react';
 
-import BaseCocktail from '../../components/BaseCocktail/BaseCocktail';
+import BaseDrink from '../../components/BaseDrink/BaseDrink';
 import PagePath from '../../constants/PagePath';
 
 class NonAlcoholicPage extends React.Component{
   render() {
-    return (<BaseCocktail path={PagePath.NonAlcoholic} />);
+    return (<BaseDrink path={PagePath.NonAlcoholic} />);
   }
 }
 

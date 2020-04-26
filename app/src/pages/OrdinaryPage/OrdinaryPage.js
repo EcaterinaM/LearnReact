@@ -1,11 +1,11 @@
 import React from 'react';
 
-import BaseCocktail from '../../components/BaseCocktail/BaseCocktail';
+import BaseDrink from '../../components/BaseDrink/BaseDrink';
 import PagePath from '../../constants/PagePath';
 
 class OrdinaryPage extends React.Component{
   render() {
-    return (<BaseCocktail path={PagePath.Ordinary} />);
+    return (<BaseDrink path={PagePath.Ordinary} />);
   }
 }
 

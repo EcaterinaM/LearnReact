@@ -6,7 +6,7 @@ import BasePageHoc from '../../hocs/BasePageHoc/BasePageHoc';
 
 import Card from '../Card/Card';
 
-import './BaseCocktail.scss';
+import './BaseDrink.scss';
 
 class BaseCocktail extends React.Component {
 
