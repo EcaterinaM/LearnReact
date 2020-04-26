@@ -1,29 +1,40 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import './Card.scss';
 
-class Card extends React.Component{
+class Card extends React.Component {
 
-  // constructor(props){
-  //       super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      toDetailsPage: false,
+    }
+  }
 
-  render(){
+  handleTitleClick = () => {
+    this.setState(() => ({
+      toDetailsPage: true
+    }))
+  }
 
-    const onImageClick = (name) => { this.props.onImageClickCallback(name); }
-    const onTitleClick = (name) => { this.props.onTitleClickCallback(name); }
+  render() {
+
+    if (this.state.toDetailsPage === true) {
+      const path = `/details/${this.props.item.idDrink}`;
+      return <Redirect to={path} />
+    }
 
     return (
       <div className="card" >
-        <div className="card-image" 
-             onClick={() => onImageClick(this.props.name)}>
-          <img src={this.props.imagePath} alt={this.props.name}/>
+        <div className="card-image">
+          <img src={this.props.item.strDrinkThumb} alt={this.props.item.strDrink} />
         </div>
-       <div className="card-title"
-            onClick={()=> onTitleClick(this.props.name)}>
-         {this.props.name}
-       </div>
-  </div>);
+        <div className="card-title"
+          onClick={this.handleTitleClick}>
+          {this.props.item.strDrink}
+        </div>
+      </div>);
   }
 }
 

@@ -1,31 +1,29 @@
 import React from 'react';
-
-import './Header.scss';
 import { Link } from 'react-router-dom';
 
-class Header extends React.Component{
+import './Header.scss';
 
-  render(){
+class Header extends React.Component {
 
-    let navigatorItems = [ 
-      { title: 'Alcoholic', path: '/alcoholic'},
-      { title: 'Non-Alcoholic', path: '/non-alcoholic'},
-      { title: 'Ordinary Drink', path: '/ordinary'},
-      { title: 'Cocktail Glass', path: '/cocktail-glass'},
-      { title: 'Champagne Flute', path: '/champagne-fluter'}
-    ]
-  
+  render() {
+    let navigatorPaths = [
+      { title: 'Alcoholic', path: '/alcoholic' },
+      { title: 'Non-Alcoholic', path: '/non-alcoholic' },
+      { title: 'Ordinary Drink', path: '/ordinary' },
+      { title: 'Cocktail Glass', path: '/cocktail-glass' },
+      { title: 'Champagne Flute', path: '/champagne-flute' }
+    ];
 
-  let headerList = navigatorItems.map(item => <li key={item.title}><Link to={item.path}>{item.title}</Link></li>)                  
+    let headerItems = navigatorPaths.map(item => <Link className="header-link" to={item.path} key={item.path}>{item.title}</Link>);
 
     return (
       <div className="header">
         <div className="title">
-            <h1>Cocktails</h1>
+          <h1>Cocktails</h1>
         </div>
         <ul className="header-items">
-          {headerList}
-        </ul>          
+          {headerItems}
+        </ul>
       </div>
     );
   }
