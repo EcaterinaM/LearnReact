@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-import Card from '../Card/Card';
-
+import RequestPaths from '../../helpers/RequestPaths';
 import BasePageHoc from '../../hocs/BasePageHoc/BasePageHoc';
+
+import Card from '../Card/Card';
 
 import './BaseCocktail.scss';
 
@@ -11,14 +12,14 @@ class BaseCocktail extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       cocktails: []
     };
   }
 
   componentDidMount() {
-    const REQUEST_PATH = this.props.requestPath;
+    const REQUEST_PATH = RequestPaths.getRequestPath(this.props.path);
+
     axios.get(REQUEST_PATH)
       .then((response) => {
         this.setState({ cocktails: response.data.drinks });
@@ -27,7 +28,6 @@ class BaseCocktail extends React.Component {
 
   render() {
     let cocktails = this.state.cocktails.map(drink => <Card item={drink} key={drink.idDrink}/>);
-
     return (
       <div className="cards">
         {cocktails}

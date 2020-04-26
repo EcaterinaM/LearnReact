@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import './Card.scss';
 
@@ -7,36 +7,27 @@ class Card extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      toDetailsPage: false,
-    }
+    //Why do I need this?
+    this.onTitleClick = this.onTitleClick.bind(this)
   }
 
-  handleTitleClick = () => {
-    this.setState(() => ({
-      toDetailsPage: true
-    }))
+  onTitleClick = () => {
+    this.props.history.push(`/details/${this.props.item.idDrink}`)
   }
 
   render() {
-
-    if (this.state.toDetailsPage === true) {
-      const path = `/details/${this.props.item.idDrink}`;
-      return <Redirect to={path} />
-    }
-
     return (
       <div className="card" >
         <div className="card-image">
           <img src={this.props.item.strDrinkThumb} alt={this.props.item.strDrink} />
         </div>
         <div className="card-title"
-          onClick={this.handleTitleClick}>
+          onClick={this.onTitleClick}>
           {this.props.item.strDrink}
         </div>
       </div>);
   }
 }
 
-export default Card;
+export default withRouter(Card);
 

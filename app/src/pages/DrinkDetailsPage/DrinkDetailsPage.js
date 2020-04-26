@@ -1,13 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 
+import Header from '../../components/Header/Header';
+
 import './DrinkDetailsPage.scss';
 
 class DrinkDetailsPage extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       cocktail: {}
     };
@@ -28,20 +29,23 @@ class DrinkDetailsPage extends React.Component {
   }
 
   render() {
-
-
     return (
-      <div className="details-page-container" >
-        <button className="primary-button back-button"
-          onClick={this.handleOnBackClick}>Back</button>
-        <div className="details-content">
-          <div className="details-title">{this.state.cocktail.strDrink}</div>
-          <div className="details-image">
-            <img src={this.state.cocktail.strDrinkThumb} alt={this.state.cocktail.strDrink} />
+      <div className="main-container">
+        <Header />
+        <div className="content">
+          <div className="details-content">
+            <div className="details-title">{this.state.cocktail.strDrink}</div>
+            <div className="details-image">
+              <img src={this.state.cocktail.strDrinkThumb} alt={this.state.cocktail.strDrink} />
+            </div>
+          </div>
+          <div className="details-footer">
+            <button className="primary-button back-button"
+              onClick={this.handleOnBackClick}>Back
+            </button>
           </div>
         </div>
-      </div>
-    );
+      </div>);
   }
 }
 
