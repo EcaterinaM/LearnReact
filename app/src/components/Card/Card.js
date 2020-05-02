@@ -3,30 +3,22 @@ import { withRouter } from 'react-router-dom';
 
 import './Card.scss';
 
-class Card extends React.Component {
+function Card(props){
 
-  constructor(props) {
-    super(props);
-    //Why do I need this?
-    this.onTitleClick = this.onTitleClick.bind(this)
+  const onTitleClick = () => {
+    props.history.push(`/details/${props.item.idDrink}`)
   }
 
-  onTitleClick = () => {
-    this.props.history.push(`/details/${this.props.item.idDrink}`)
-  }
-
-  render() {
-    return (
-      <div className="card" >
-        <div className="card-image">
-          <img src={this.props.item.strDrinkThumb} alt={this.props.item.strDrink} />
-        </div>
-        <div className="card-title"
-          onClick={this.onTitleClick}>
-          {this.props.item.strDrink}
-        </div>
-      </div>);
-  }
+  return (
+    <div className="card" >
+      <div className="card-image">
+        <img src={props.item.strDrinkThumb} alt={props.item.strDrink} />
+      </div>
+      <div className="card-title"
+        onClick={onTitleClick}>
+        {props.item.strDrink}
+      </div>
+    </div>);
 }
 
 export default withRouter(Card);

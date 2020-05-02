@@ -1,0 +1,39 @@
+.main-content {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.search-bar {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cocktails-list {
+  height: auto;
+  margin-bottom: 12px;
+}
+
+img {
+  height: 300px;
+}
+
+.cards {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

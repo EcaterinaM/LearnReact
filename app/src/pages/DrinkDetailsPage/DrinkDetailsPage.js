@@ -1,52 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Header from '../../components/Header/Header';
 
 import './DrinkDetailsPage.scss';
 
-class DrinkDetailsPage extends React.Component {
+function DrinkDetailsPage(props) {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      cocktail: {}
-    };
-  }
+  const [cocktail, setCocktail] = useState([]);
+  const [requestUrl, setRequestUrl] = useState('');
 
-  handleOnBackClick = () => {
-    this.props.history.goBack();
-  }
-
-  componentDidMount() {
-    let id = this.props.match.params['id'];
-    const DETAILS_REQUEST = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`;
-
-    axios.get(DETAILS_REQUEST)
+  useEffect(() => {
+    setRequestUrl(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${props.match.params['id']}`);
+    axios.get(requestUrl)
       .then((response) => {
-        this.setState({ cocktail: response.data.drinks[0] });
+        setCocktail(response.data.drinks[0])
       });
-  }
+      
+  }, [requestUrl]);
 
-  render() {
-    return (
-      <div className="main-container">
-        <Header />
-        <div className="content">
-          <div className="details-content">
-            <div className="details-title">{this.state.cocktail.strDrink}</div>
-            <div className="details-image">
-              <img src={this.state.cocktail.strDrinkThumb} alt={this.state.cocktail.strDrink} />
-            </div>
-          </div>
-          <div className="details-footer">
-            <button className="primary-button back-button"
-              onClick={this.handleOnBackClick}>Back
-            </button>
+
+  return (
+    <div className="main-container">
+      <Header />
+      <div className="content">
+        <div className="details-content">
+          <div className="details-title">{cocktail.strDrink}</div>
+          <div className="details-image">
+            <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
           </div>
         </div>
-      </div>);
-  }
+        <div className="details-footer">
+          <button className="primary-button back-button"
+            onClick={() => { props.history.goBack(); }}>
+            Back
+            </button>
+        </div>
+      </div>
+    </div>);
 }
 
 
