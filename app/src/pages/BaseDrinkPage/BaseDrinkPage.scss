@@ -37,3 +37,14 @@ img {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+.add-button-container{
+  top: 93%;
+  position: fixed;
+  padding-left: 20px;
+
+  .add-button{
+    background-color: #aec6cf;
+    border-radius: 30px;
+  }
+}

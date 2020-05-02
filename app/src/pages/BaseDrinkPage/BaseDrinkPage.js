@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
 import Card from '../../components/Card/Card';
@@ -21,6 +22,10 @@ function BaseDrinkPage(props) {
 
   const cocktailCards = cocktails.map(drink => <Card item={drink} key={drink.idDrink} />);
 
+  const onAddCocktailClick = () => {
+    props.history.push('/addCocktail');
+  }
+
   return (
     <div className="main-container">
       <Header />
@@ -32,11 +37,17 @@ function BaseDrinkPage(props) {
           <div className="cards">
             {cocktailCards}
           </div>
+
+        </div>
+        <div className="add-button-container">
+          <button className="primary-button add-button"
+            onClick={onAddCocktailClick}>Add</button>
         </div>
       </div>
     </div>
   );
 }
 
-export default BaseDrinkPage;
+//export default BaseDrinkPage;
 
+export default withRouter(BaseDrinkPage);
